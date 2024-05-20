@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: log-service
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      group-id: group-1
+
+logging:
+  file:
+    name: C:/JavaProjects/Aston/Intensive/AstonSecondHomework/elk/logs/elk-stack.log

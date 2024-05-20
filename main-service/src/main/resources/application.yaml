@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: AstonSecondHomework
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/AstonSecondHomework
+    username: superuser
+    password: password
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      group-id: group-1
+
+  liquibase:
+    enabled: true
