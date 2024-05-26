@@ -16,7 +16,7 @@ public interface StudentMapper {
     @Mapping(target = "lastName", source = "entityDto.lastName")
     @Mapping(target = "firstName", source = "entityDto.firstName")
     @Mapping(target = "patronymic", source = "entityDto.patronymic")
-    @Mapping(target = "group", source = "entityDto.group")
+    @Mapping(target = "group", source = "entityDto.shortGroup")
     Student map(StudentRequestDto entityDto);
 
     @Mapping(target = "id", source = "entity.id")

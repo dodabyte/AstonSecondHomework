@@ -3,6 +3,7 @@ package com.example.astonsecondhomework.service;
 import com.example.astonsecondhomework.dto.entity.student.StudentRequestDto;
 import com.example.astonsecondhomework.dto.entity.student.StudentResponseDto;
 import com.example.astonsecondhomework.dto.entity.student.StudentUpdateDto;
+import com.example.astonsecondhomework.entity.Group;
 import com.example.astonsecondhomework.entity.Student;
 import com.example.astonsecondhomework.exception.EntityNotFoundException;
 import com.example.astonsecondhomework.exception.RepositoryException;
@@ -31,7 +32,10 @@ public class StudentServiceImpl implements StudentService {
     @Override
     @Transactional
     public StudentResponseDto insert(StudentRequestDto dto) throws RepositoryException, InsertionException {
-        Student student = studentRepository.save(studentMapper.map(dto));
+        Optional<Group> optionalGroup = groupRepository.findById(dto.getShortGroup().getId());
+        Student currentStudent = studentMapper.map(dto);
+        currentStudent.setGroup(optionalGroup.orElseThrow(InsertionException::new));
+        Student student = studentRepository.save(currentStudent);
         Optional<Student> optional = Optional.ofNullable(student);
         return studentMapper.map(optional.orElseThrow(InsertionException::new));
     }

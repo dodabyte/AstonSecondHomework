@@ -15,6 +15,9 @@ public interface GroupMapper {
     @Mapping(target = "semester", source = "entityDto.semester")
     Group map(GroupRequestDto entityDto);
 
+    @Mapping(target = "id", source = "entityDto.id")
+    Group map(GroupShortRequestDto entityDto);
+
     @Mapping(target = "id", source = "entity.id")
     @Mapping(target = "name", source = "entity.name")
     @Mapping(target = "course", source = "entity.course")

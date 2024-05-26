@@ -113,10 +113,7 @@ public interface StudentApi {
                                             "patronymic": "Иванович"
                                             "group":
                                                 {
-                                                    "id": 1,
-                                                    "name": "АВТ-043",
-                                                    "course": 4,
-                                                    "semester": 8
+                                                    "id": 1
                                                 }
                                         }
                                         """)

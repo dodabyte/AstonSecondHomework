@@ -124,14 +124,7 @@ public interface GroupApi {
                                             "name": "АВТ-043",
                                             "course": 4,
                                             "semester": 8,
-                                            "students": [
-                                                {
-                                                    "id": 1,
-                                                    "firstName": "Иванов",
-                                                    "secondName": "Иван",
-                                                    "patronymic": "Иванович"
-                                                }
-                                            ]
+                                            "students": null
                                         }
                                         """)
                                     }
@@ -164,10 +157,7 @@ public interface GroupApi {
                                         "semester": 6,
                                         "students": [
                                             {
-                                                "id": 1,
-                                                "firstName": "Иванов",
-                                                "secondName": "Иван",
-                                                "patronymic": "Иванович"
+                                                "id": 1
                                             }
                                         ]
                                     }
